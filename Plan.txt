@@ -1,0 +1,11 @@
+Requirements:
+
+4 services
+1. Controller - takes user input and passes to other services
+2. Generator 1 - Generates a thing
+3. Generator 2 - Generates another thing
+4. Combinor - Generates a third thing based on the output of generator 1 & 2
+
+running update - The system must be able to handle an update, without being shut down. 
+This must update must be performed during presentation and so should be noticeable.
+
