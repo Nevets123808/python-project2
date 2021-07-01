@@ -10,7 +10,15 @@ running update - The system must be able to handle an update, without being shut
 This must update must be performed during presentation and so should be noticeable.
 
 Ideas
- - Character sheet - Generator 1 dice roller, Generator 2 gets profs from db, Combinor outputs finished sheet,
-    update add class to options
- - Encounter Generator - Generator 1 generates a list of creatures, Generator 2 generates a target CR, Combinor
-    makes an encounter out of list of creatures to fit target CR
+ - Character sheet - Generator 1 dice roller, Generator 2 gets profs from db, Combinor outputs finished
+   sheet, update add class to options - probably quite pretty result
+
+ - Encounter Generator - Generator 1 generates a list of creatures, Generator 2 generates a target CR,
+   Combinor makes an encounter out of list of creatures to fit target CR - could be extended to encounter
+   table generator
+
+ - Dungeon generator - Generator 1 generates list of rooms, Generator 2 generates list of encounters,
+   Combinor matches room and encounter - potentially map?
+
+ - 
+ 
