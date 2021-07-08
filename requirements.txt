@@ -1,1 +1,6 @@
 #general required python packages for development environment
+flask
+flask-testing
+flask-SQLAlchemy
+pytest
+pytest-cov
