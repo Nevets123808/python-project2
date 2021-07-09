@@ -1,1 +1,6 @@
 #required packages for skilltag container
+flask
+flask-testing
+flask-SQLAlchemy
+pytest
+pytest-cov

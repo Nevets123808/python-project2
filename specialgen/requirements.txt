@@ -1,1 +1,6 @@
 #Required packages for specialgen container
+flask
+flask-testing
+flask-SQLAlchemy
+pytest
+pytest-cov

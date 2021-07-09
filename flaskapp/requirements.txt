@@ -1,1 +1,7 @@
 #required packages for flaskapp container
+flask
+flask-testing
+flask-SQLAlchemy
+pytest
+pytest-cov
+requests

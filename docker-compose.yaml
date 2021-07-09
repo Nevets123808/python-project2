@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  flaskapp:
+    build: ./flaskapp
+    ports:
+    - target: 5000
+      published: 5000
+      protocol: tcp
+  skilltag:
+    build: ./skilltag
+  specialgen:
+    build: ./specialgen
