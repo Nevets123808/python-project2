@@ -10,3 +10,5 @@ services:
     build: ./skilltag
   specialgen:
     build: ./specialgen
+  sheetmake:
+    build: ./sheetmake
