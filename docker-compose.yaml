@@ -1,14 +1,22 @@
 version: '3.8'
 services:
   flaskapp:
+    container_name: flaskapp
     build: ./flaskapp
+    image: stevenbourn/flaskapp
     ports:
     - target: 5000
       published: 5000
       protocol: tcp
   skilltag:
+    container_name: skilltag
     build: ./skilltag
+    image: stevenbourn/skilltag
   specialgen:
+    container_name: specialgen
     build: ./specialgen
+    image: stevenbourn/specialgen
   sheetmake:
+    container_name: sheetmake
     build: ./sheetmake
+    image: stevenbourn/sheetmake
