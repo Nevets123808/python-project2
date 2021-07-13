@@ -2,8 +2,10 @@
   become: true
   roles:
   - docker
+  - manager
 
 - hosts: worker
   become: true
   roles:
   - docker
+  - worker

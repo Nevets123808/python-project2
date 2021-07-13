@@ -1,2 +1,6 @@
 ---
 # tasks file for manager
+- name: Setup Swarm
+  community.docker.docker_swarm:
+    state: present
+  register: 'swarm_info'
