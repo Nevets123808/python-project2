@@ -1,0 +1,5 @@
+all:
+  children:
+    manager:
+      hosts:
+        34.142.116.50

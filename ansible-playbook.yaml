@@ -1,0 +1,4 @@
+- hosts: manager
+  become: true
+  roles:
+  - docker
