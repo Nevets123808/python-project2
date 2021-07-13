@@ -18,7 +18,9 @@ pipeline {
             sh "docker-compose push"
         }
         stage('Pull to swarm'){
-            sh "scp scp -r /local/directory/ username@to_host:/remote/directory/"
+            sh "scp /home/Steven/python-project2/docker-compose.yaml Steven@swarm-manager:/home/Steven/
+docker-compose.yaml"
+            
         }
     }
 }
