@@ -1,0 +1,10 @@
+pipeline {
+    agent any
+    stages {
+        stage('Configure machines'){
+            steps{
+                sh "ansible-playbook -i inventory.yaml ansible-playbook.yaml"
+            }
+        }
+    }
+}
