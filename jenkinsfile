@@ -6,5 +6,19 @@ pipeline {
                 sh "ansible-playbook -i inventory.yaml ansible-playbook.yaml"
             }
         }
+        stage('Build containers')
+            steps{
+                sh "docker-compose -d up --build"
+            }
+        stage('Test')
+            stesp{
+
+            }
+        stage('Push Containers'){
+            sh "docker-compose push"
+        }
+        stage('Pull to swarm'){
+            sh "scp scp -r /local/directory/ username@to_host:/remote/directory/"
+        }
     }
 }
