@@ -2,3 +2,8 @@
   become: true
   roles:
   - docker
+
+- hosts: worker
+  become: true
+  roles:
+  - docker
