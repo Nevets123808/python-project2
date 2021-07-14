@@ -5,7 +5,7 @@ class TestBase(TestCase):
     def create_app(self):
         return app
 
-class test_specialgen(TestBase):
+class test_skilltag(TestBase):
     def test_response(self):
         response = self.client.get(url_for("skilltag"))
         data = eval(response.data.decode("utf-8"))
