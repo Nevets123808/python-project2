@@ -1,4 +1,4 @@
 ---
 # tasks file for jenkins
 - name: install docker-compose
-  script: ~/docker-compose.sh
+  script: ~/scripts/docker-compose.sh
