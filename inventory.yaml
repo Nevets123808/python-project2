@@ -1,4 +1,6 @@
 all:
+  hosts:
+    jenkins-nginx-ansible
   children:
     manager:
       hosts:
