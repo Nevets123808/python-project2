@@ -31,7 +31,7 @@ def makeSheet():
     skills = falloutSkill(data_received["SPECIAL"])
     tags = data_received["skillTag"].values()
     for tag in tags:
-        skills[tag] *= 2
+        skills[tag] += 20
     return jsonify(skills)
 
 if __name__ == "__main__":
