@@ -1,10 +1,10 @@
 from flask import Flask, Response, jsonify
-from random import choices
+from random import sample
 
 app = Flask(__name__)
 
 def tagSkills(skills):
-    tags = choices(skills, k=3)
+    tags = sample(skills, k=3)
     dict= {}
     for index in range(3):
         dict[f"tag{index+1}"] = tags[index]
