@@ -25,7 +25,8 @@ pipeline {
         stage('Pull to swarm'){
             steps {
             sh "scp ${workspace}/docker-compose.yaml jenkins@swarm-manager:/home/jenkins/docker-compose.yaml"
-            sh "ssh jenkins@swarm-manager > docker stack deploy --compose-file docker-compose.yaml app_stack"
+            sh """ssh jenkins@swarm-manager
+            docker stack deploy --compose-file docker-compose.yaml app_stack"""
             }
         }
     }
