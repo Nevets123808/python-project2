@@ -3,6 +3,10 @@
   roles:
     - docker
 
+- hosts: jenkins
+  become: true
+  roles:
+  - jenkins
 - hosts: manager
   become: true
   roles:
