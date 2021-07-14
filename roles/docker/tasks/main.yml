@@ -34,9 +34,9 @@
     state: present
     update_cache: true
 
-- name: Add ubuntu user to Docker group
+- name: Add jenkins user to Docker group
   user:
-    name: Steven
+    name: jenkins
     groups: docker
     append: true
 
