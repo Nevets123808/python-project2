@@ -4,7 +4,7 @@ pipeline {
         stage('Configure machines') {
             steps{
                 sh "cat ansible-playbook.yaml"
-                sh "ansible-playbook -i inventory.yaml ansible-playbook.yaml"
+                sh "~/.local/bin/ansible-playbook -i inventory.yaml ansible-playbook.yaml"
             }
         }
         stage('Build containers'){
