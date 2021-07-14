@@ -11,8 +11,8 @@ pipeline {
                 sh "docker-compose -d up --build"
             }
         stage('Test')
-            stesp{
-
+            steps{
+                sh "echo 'testing'"
             }
         stage('Push Containers'){
             sh "docker-compose push"
@@ -20,7 +20,7 @@ pipeline {
         stage('Pull to swarm'){
             sh "scp /home/Steven/python-project2/docker-compose.yaml Steven@swarm-manager:/home/Steven/
 docker-compose.yaml"
-            
+            sh "ssh Steven@swarm-manager && docker stack deploy --compose-file docker-compose.yaml app_stack"
         }
     }
 }
