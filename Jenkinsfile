@@ -18,8 +18,7 @@ pipeline {
             sh "docker-compose push"
         }
         stage('Pull to swarm'){
-            sh "scp /home/Steven/python-project2/docker-compose.yaml Steven@swarm-manager:/home/Steven/
-docker-compose.yaml"
+            sh "scp /home/Steven/python-project2/docker-compose.yaml Steven@swarm-manager:/home/Steven/docker-compose.yaml"
             sh "ssh Steven@swarm-manager && docker stack deploy --compose-file docker-compose.yaml app_stack"
         }
     }
