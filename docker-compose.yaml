@@ -8,6 +8,9 @@ services:
     - target: 5000
       published: 5000
       protocol: tcp
+    environment:
+      DATABASE_URI = ${DATABASE_URI}
+      SECRET_KEY = ${SECRET_KEY}
   skilltag:
     container_name: skilltag
     build: ./skilltag
