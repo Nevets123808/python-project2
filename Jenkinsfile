@@ -22,7 +22,7 @@ pipeline {
                 sh "cd ./sheetmake && pytest --cov=app --cov-report html"
                 sh "cd ./skilltag && pytest --cov=app --cov-report html"
                 sh "cd ./specialgen && pytest --cov=app --cov-report html"
-                archiveArtifacts artifacts: './flaskapp/htmlcov/ ./specialgen/htmlcov/ ./skilltag/htmlcov/ ./sheetmake/htmlcov/', followSymlinks: false
+                archiveArtifacts artifacts: 'flaskapp/htmlcov/, specialgen/htmlcov/, skilltag/htmlcov/, sheetmake/htmlcov/', followSymlinks: false
             }
         }
         stage('Push Containers'){
