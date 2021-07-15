@@ -1,5 +1,5 @@
 ---
-# tasks file for docker
+# tasks file for docke
 - name: Install prerequisites
   apt:
     pkg:
