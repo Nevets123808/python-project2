@@ -1,7 +1,7 @@
 ---
 # tasks file for jenkins
-- name: install docker-compose
-  script: ~/scripts/docker-compose.sh
+# - name: install docker-compose
+#   script: /home/scripts/docker-compose.sh
 
 - name: install python requisites
   pip:
