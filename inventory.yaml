@@ -12,3 +12,5 @@ all:
     ansible_user: "jenkins"
     ansible_ssh_private_key_file: "~/.ssh/id_rsa"
     ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+    DATABASE_URI: "sql+mypysql://root:TrivialMoose@project2:3306/project"
+    SECRET_KEY: "ASDASD"
