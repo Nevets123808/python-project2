@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+        DATABASE_URI = credentials(DATABASE_URI)
+        SECRET_KEY = credentials(SECRET_KEY)
+    }
     stages {
         stage('Configure machines') {
             steps{
@@ -9,7 +13,6 @@ pipeline {
         }
         stage('Build containers'){
             steps{
-                sh "export DATABASE_URI=${DATABASE_URI}"
                 sh "sudo docker-compose up -d --build"
             }
         }
