@@ -11,14 +11,17 @@ services:
     environment:
       DATABASE_URI = ${DATABASE_URI}
       SECRET_KEY = ${SECRET_KEY}
+
   skilltag:
     container_name: skilltag
     build: ./skilltag
     image: stevenbourn/skilltag
+
   specialgen:
     container_name: specialgen
     build: ./specialgen
     image: stevenbourn/specialgen
+    
   sheetmake:
     container_name: sheetmake
     build: ./sheetmake
