@@ -5,3 +5,4 @@ flask-SQLAlchemy
 pytest
 pytest-cov
 requests
+requests_mock
