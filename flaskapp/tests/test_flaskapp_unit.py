@@ -2,10 +2,21 @@ from flask import url_for, jsonify
 from flask_testing import TestCase
 import requests_mock
 
-from app import app
+from app import app, db, characters
 class TestBase(TestCase):
     def create_app(self):
+        app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///"
+        app.config["SECRET_KEY"] = "agjiwagjkl"
+        app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
         return app
+    
+    def setUp(self):
+        db.create_all()
+    
+    def tearDown(self):
+        db.session.remove()
+        db.drop_all()
+
 
 class test_skilltag(TestBase):
     def test_response(self):

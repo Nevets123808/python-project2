@@ -1,7 +1,7 @@
 #required packages for flaskapp container
 flask
 flask-testing
-flask-SQLAlchemy
+flask_SQLAlchemy
 pytest
 pytest-cov
 requests

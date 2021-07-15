@@ -1,13 +1,13 @@
 from flask import Flask, jsonify
-from flask-sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 from os import getenv
 import requests
 
 app = Flask(__name__)
 
-app.config("SQL_ALCHEMY_DATABASE_URI") = getenv("DATABASE_URI")
-app.config("SQL_ALCHEMY_SECRET_KEY") = getenv("SECRET_KEY")
-app.config("SQL_ALCHEMY_TRACK_MODIFICATIONS") = False
+app.config["SQLALCHEMY_DATABASE_URI"] = getenv("DATABASE_URI")
+app.config["SECRET_KEY"]= getenv("SECRET_KEY")
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db=SQLAlchemy(app)
 
@@ -31,7 +31,9 @@ def home():
     SkillTagresponse = requests.get("http://skilltag:5000/skilltag")
     print(SPECIALresponse.json()["S"])
     chardict = {"SPECIAL": SPECIALresponse.json(), "skillTag": SkillTagresponse.json()}
-    
+    newChar = characters(Strength = chardict["SPECIAL"]["S"], Perception = chardict["SPECIAL"]["P"], Endurance = chardict["SPECIAL"]["E"], Charisma = chardict["SPECIAL"]["C"], Intelligence = chardict["SPECIAL"]["I"], Agility = chardict["SPECIAL"]["A"], Luck = chardict["SPECIAL"]["L"], Tag1 = chardict["skillTag"]["tag1"], Tag2 = chardict["skillTag"]["tag2"], Tag3 = chardict["skillTag"]["tag3"])
+    db.session.add(newChar)
+    db.session.commit()
     sheetmakeresponse = requests.post("http://sheetmake:5000/sheetmake", json = chardict)
     chardict["skills"] = sheetmakeresponse.json()
     return chardict
