@@ -1,9 +1,9 @@
 ---
 tasks file for jenkins
 - name: install docker-compose
-    script: ${workspace}/scripts/docker-compose.sh
+  script: {{ playbook_dir }}/scripts/docker-compose.sh
 
 - name: install python requisites
   pip:
-    requirements: ${workspace}/requirements.txt
+    requirements: {{ playbook_dir }}/requirements.txt
     
