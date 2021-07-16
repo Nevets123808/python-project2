@@ -3,7 +3,7 @@ services:
   flaskapp:
     container_name: flaskapp
     build: ./flaskapp
-    image: stevenbourn/flaskapp
+    image: stevenbourn/flaskapp:latest
     ports:
     - target: 5000
       published: 5000
@@ -15,14 +15,14 @@ services:
   skilltag:
     container_name: skilltag
     build: ./skilltag
-    image: stevenbourn/skilltag
+    image: stevenbourn/skilltag:latest
 
   specialgen:
     container_name: specialgen
     build: ./specialgen
-    image: stevenbourn/specialgen
+    image: stevenbourn/specialgen:latest
     
   sheetmake:
     container_name: sheetmake
     build: ./sheetmake
-    image: stevenbourn/sheetmake
+    image: stevenbourn/sheetmake:latest
