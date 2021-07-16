@@ -7,7 +7,6 @@ pipeline {
     stages {
         stage('Configure machines') {
             steps{
-                sh "cat ansible-playbook.yaml"
                 sh "~/.local/bin/ansible-playbook -i inventory.yaml ansible-playbook.yaml"
             }
         }
@@ -27,6 +26,7 @@ pipeline {
         }
         stage('Push Containers'){
             steps {
+            sh "echo $DATABASE_URI"
             sh "sudo docker-compose push"
             }
         }
