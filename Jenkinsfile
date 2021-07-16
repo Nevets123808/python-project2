@@ -14,7 +14,7 @@ pipeline {
             steps{
                 sh "docker-compose up -d --build"
                 sh "docker build -t stevenbourn/nginx-lb ./nginx"
-                sh "docker run --name nginx-lb stevenbourn/nginx-lb"
+                sh "docker run -p 80:80 -d --name nginx-lb stevenbourn/nginx-lb"
             }
         }
         stage('Test'){
