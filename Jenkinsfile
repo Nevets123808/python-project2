@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Push Containers'){
             steps {
-            sh "sudo docker-compose push"
+            sh "docker-compose push"
             }
         }
         stage('Pull to swarm'){
