@@ -23,8 +23,7 @@ services:
     container_name: specialgen
     build: ./specialgen
     image: stevenbourn/specialgen:latest
-    deploy:
-      replicas: 3
+
     
   sheetmake:
     container_name: sheetmake
