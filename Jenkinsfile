@@ -3,8 +3,6 @@ pipeline {
     environment {
         DATABASE_URI=credentials('DATABASE_URI')
         SECRET_KEY=credentials('SECRET_KEY')
-        DOCKER_UNAME=credentials('DOCKER_UNAME')
-        DOCKER_PASSWD=credentials('DOCKER_PASSWD')
     }
     stages {
         stage('Configure machines') {
@@ -28,8 +26,7 @@ pipeline {
         }
         stage('Push Containers'){
             steps {
-            sh """docker login -u $DOCKER_UNAME -p $DOCKER_PASSWD
-             docker-compose push"""
+            sh "docker-compose push"
             }
         }
         stage('Pull to swarm'){
