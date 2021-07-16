@@ -11,18 +11,26 @@ services:
     environment:
       DATABASE_URI: ${DATABASE_URI}
       SECRET_KEY: ${SECRET_KEY}
+    deploy:
+      replicas: 3
 
   skilltag:
     container_name: skilltag
     build: ./skilltag
     image: stevenbourn/skilltag:latest
+    deploy:
+      replicas: 3
 
   specialgen:
     container_name: specialgen
     build: ./specialgen
     image: stevenbourn/specialgen:latest
+    deploy:
+      replicas: 3
     
   sheetmake:
     container_name: sheetmake
     build: ./sheetmake
     image: stevenbourn/sheetmake:latest
+    deploy:
+      replicas: 3

@@ -13,6 +13,8 @@ pipeline {
         stage('Build containers'){
             steps{
                 sh "docker-compose up -d --build"
+                sh "docker build -t stevenbourn/nginx-lb ./nginx"
+                sh "docker run --name nginx-lb stevenbourn/nginx-lb"
             }
         }
         stage('Test'){
