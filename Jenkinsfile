@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Push Containers'){
             steps {
-            sh "echo $DATABASE_URI"
+            sh "echo $SECRET_KEY"
             sh "sudo docker-compose push"
             }
         }
