@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DATABASE_URI="mysql+pymysql://root:TrivialMoose@34.142.119.164:3306/project"//credentials('DATABASE_URI')
+        DATABASE_URI=credentials('DATABASE_URI')
         SECRET_KEY=credentials('SECRET_KEY')
     }
     stages {
