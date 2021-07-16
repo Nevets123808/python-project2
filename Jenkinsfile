@@ -12,6 +12,7 @@ pipeline {
         }
         stage('Build containers'){
             steps{
+                sh "echo DATABASE_URI"
                 sh "sudo docker-compose up -d --build"
             }
         }
