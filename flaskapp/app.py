@@ -36,7 +36,7 @@ def home():
     # db.session.commit()
     sheetmakeresponse = requests.post("http://sheetmake:5000/sheetmake", json = chardict)
     chardict["skills"] = sheetmakeresponse.json()
-    return chardict
+    return render_template("charsheet.html", chardict = chardict)
 
 if __name__ == "__main__":
     app.run(debug= True, host = '0.0.0.0')
