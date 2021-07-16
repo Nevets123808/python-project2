@@ -12,7 +12,8 @@ pipeline {
         }
         stage('Build containers'){
             steps{
-                sh "echo $DATABASE_URI"
+                sh "export DATABASE_URI=$DATABASE_URI"
+                sh "export SECRET_KEY=$SECRET_KEY"
                 sh "sudo docker-compose up -d --build"
             }
         }
