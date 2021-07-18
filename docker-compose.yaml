@@ -1,28 +1,38 @@
 version: '3.8'
 services:
+  nginx-lb:
+    build: ./nginx
+    image: stevenbourn/nginx-lb:latest
+    ports:
+    - target: 80
+      published: 80
+      protocol: tcp
   flaskapp:
     container_name: flaskapp
     build: ./flaskapp
-    image: stevenbourn/flaskapp
+    image: stevenbourn/flaskapp:latest
     ports:
     - target: 5000
       published: 5000
       protocol: tcp
     environment:
-      DATABASE_URI: $DATABASE_URI
+      DATABASE_URI: ${DATABASE_URI}
       SECRET_KEY: ${SECRET_KEY}
+
 
   skilltag:
     container_name: skilltag
     build: ./skilltag
-    image: stevenbourn/skilltag
+    image: stevenbourn/skilltag:latest
+
 
   specialgen:
     container_name: specialgen
     build: ./specialgen
-    image: stevenbourn/specialgen
+    image: stevenbourn/specialgen:latest
+
     
   sheetmake:
     container_name: sheetmake
     build: ./sheetmake
-    image: stevenbourn/sheetmake
+    image: stevenbourn/sheetmake:latest
