@@ -1,8 +1,8 @@
 # Fallout Character Generator
 
 ## Requirements:
-
-4 services
+At its core, the project involves creating an application that generates “Objects” upon a set of predefined rules.
+The required architecure includes 4 microservices:
 1. Controller - takes user input and passes to other services
 2. Generator 1 - Generates a thing
 3. Generator 2 - Generates another thing
@@ -45,3 +45,11 @@ for Fallout Tactics, which has a slightly changed list of skills, and a differen
     - /skills: get tag skills
     - /construct: calculate skill values and derived stats
     - /output: character sheet (hopefully formatted nicely)
+
+## Actual Product
+The flask app has been scaled back so that more project time could be spent on setting up the CI/CD pipeline, no form has been implemented, the randomly generated stats haven't be forced to have a total of 40 and only skill values are calculated. The rolling update is now simply the output being wrapped in a Jinja2 template.
+
+## CI/CD Pipeline
+The network used for this project consists of three VMs, the Jenkins Controller jenkins-ansible-nginx, the swarm-manager, and the swarm-worker. Originally it was planned that the Jenkins controller would run an nginx load balancer, however this was integrated into the swarm for ease of deployment.
+
+Development and testing is performed on the Jenkins controller, using Git as the VCS. The application is deployed by git-webhook using a Jenkins pipeline. This pipeline has 
