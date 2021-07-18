@@ -32,8 +32,8 @@ def home():
     print(SPECIALresponse.json()["S"])
     chardict = {"SPECIAL": SPECIALresponse.json(), "skillTag": SkillTagresponse.json()}
     newChar = characters(Strength = chardict["SPECIAL"]["S"], Perception = chardict["SPECIAL"]["P"], Endurance = chardict["SPECIAL"]["E"], Charisma = chardict["SPECIAL"]["C"], Intelligence = chardict["SPECIAL"]["I"], Agility = chardict["SPECIAL"]["A"], Luck = chardict["SPECIAL"]["L"], Tag1 = chardict["skillTag"]["tag1"], Tag2 = chardict["skillTag"]["tag2"], Tag3 = chardict["skillTag"]["tag3"])
-    db.session.add(newChar)
-    db.session.commit()
+    #db.session.add(newChar)
+    #db.session.commit()
     sheetmakeresponse = requests.post("http://sheetmake:5000/sheetmake", json = chardict)
     chardict["skills"] = sheetmakeresponse.json()
     return chardict
