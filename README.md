@@ -73,5 +73,7 @@ This project has been risked assessed, with each risk being considered for the e
 
 ![Imgur](https://i.imgur.com/RGM8j6r.png)
 
+## Known Bugs
 
+- Service 4 appears to occasionally return the input rather than the ouptut, could this be some kind of buffer error?
 
